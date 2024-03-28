@@ -11,6 +11,14 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ScrollView {
+                VStack(alignment: .leading, spacing: 25){
+                    Text("Overview")
+                        .font(.title2)
+                        .bold()
+                    
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
                 
             }
             
@@ -20,6 +28,8 @@ struct ContentView: View {
                 //Mark: Notification Icon
                 ToolbarItem{
                     Image(systemName: "bell.badge")
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(Color.icon, .primary)
                 }
             }
         }
@@ -29,6 +39,11 @@ struct ContentView: View {
         }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews:some View {
+        Group {
+            ContentView()
+            ContentView()
+        }
+    }
 }
